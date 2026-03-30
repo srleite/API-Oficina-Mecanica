@@ -15,7 +15,7 @@ public class OrdemServicoAsyncService {
     @Autowired
     private OrdemServicoWorker worker;
 
-    @Async
+    @Async("notificacaoTaskExecutor")
     public void processarOrdemAsync(Long ordemId) {
         try {
             logger.info("Iniciando processamento assíncrono para ordem ID: {}", ordemId);
@@ -26,4 +26,3 @@ public class OrdemServicoAsyncService {
         }
     }
 }
-

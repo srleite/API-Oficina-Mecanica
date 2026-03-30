@@ -12,7 +12,7 @@ public class EmailServiceImp implements EmailService {
     private static final Logger logger = LoggerFactory.getLogger(EmailServiceImp.class);
 
     @Override
-    @Async
+    @Async("notificacaoTaskExecutor")
     public void enviarEmailBoasVindas(String email, String nome) {
         try {
             Thread.sleep(2000); //*utilizo o thread sleep para simular o tempo gasto para enviar um email
